@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Result</title>
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: 30px auto; padding: 20px; }
+    .error { color: red; background: #fee; padding: 15px; border-radius: 8px; }
+    img { max-width: 300px; height: auto; margin: 10px 0; }
+    .field { margin: 10px 0; }
+    .label { font-weight: bold; color: #444; }
+    a.download { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #0d9488; color: white; text-decoration: none; border-radius: 6px; }
+    a.download:hover { background: #0f766e; }
+  </style>
+</head>
+<body>
+  <% if (locals.error) { %>
+    <div class="error"><%= error %></div>
+    <a href="/">← Try Again</a>
+  <% } else { %>
+    <% if (product.image_url !== 'N/A') { %>
+      <img src="<%= product.image_url %>" alt="Product">
+    <% } %>
+    <div class="field"><span class="label">Title:</span> <%= product.title %></div>
+    <div class="field"><span class="label">Price:</span> <%= product.price %></div>
+    <div class="field"><span class="label">Description:</span> <%= product.description %></div>
+    <div class="field"><span class="label">URL:</span> <a href="<%= product.product_url %>" target="_blank"><%= product.product_url %></a></div>
+    <a href="<%= csvUrl %>" class="download">📥 Download CSV Report</a>
+    <br><br>
+    <a href="/">← Scrape Another</a>
+  <% } %>
+</body>
+</html>

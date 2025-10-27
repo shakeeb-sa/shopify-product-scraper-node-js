@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Famous Jackets Scraper</title>
+  <style>
+    body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 20px; background: #f8fafc; }
+    .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    h1 { text-align: center; margin-bottom: 20px; color: #0f172a; }
+    input[type="url"] { width: 100%; padding: 14px; font-size: 16px; border: 1px solid #cbd5e1; border-radius: 8px; margin: 10px 0; }
+    button { width: 100%; padding: 14px; background: #0d9488; color: white; font-size: 16px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #0f766e; }
+    .note { background: #ecfdf5; padding: 16px; margin-top: 20px; border-radius: 8px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🧥 Scrape Your Product</h1>
+    <p>Enter a product URL from <strong>famousjackets.com</strong>:</p>
+    <form method="POST" action="/scrape">
+      <input type="url" name="url" placeholder="https://famousjackets.com/products/..." required>
+      <button type="submit">Scrape Product</button>
+    </form>
+    <div class="note">
+      ✅ Uses your site’s meta tags — works with your actual HTML structure.
+    </div>
+  </div>
+</body>
+</html>
